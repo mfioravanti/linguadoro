@@ -2,12 +2,17 @@
 import React from 'react'
 import { View, TextInput, Button } from 'react-native'
 
-import { Card } from '../Model/Card' 
+import { Card } from './cards/Card';
 
-export class CenterComponent extends React.Component {
+interface IState {
+  cards: Card[];
+  currentCard?: Card;
+}
 
-  constructor(props) {
-    super(props)
+export class CenterComponent extends React.Component<{}, IState> {
+
+  constructor() {
+    super({});
     this.state = {
       cards: [],
       currentCard : undefined

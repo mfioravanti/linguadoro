@@ -1,10 +1,30 @@
 {
+  "name": "Linguadoro",
+  "version": "0.0.1",
+  "private": true,
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "lint": "tslint -p \".\" -t stylish",
+    "test": "jest --coverage"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/src/.*\\.(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   },
   "dependencies": {
     "expo": "^31.0.2",
@@ -14,7 +34,19 @@
     "redux": "^4.0.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
-  },
-  "private": true
+    "@types/jest": "^24.0.3",
+    "@types/react": "^16.8.2",
+    "@types/react-native": "^0.57.35",
+    "@types/react-test-renderer": "^16.8.0",
+    "babel-preset-expo": "^5.0.0",
+    "jest": "^24.1.0",
+    "react-native-typescript-transformer": "^1.2.11",
+    "react-test-renderer": "^16.8.1",
+    "ts-jest": "^23.10.5",
+    "tslint": "^5.12.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "tslint-react-recommended": "^1.0.15",
+    "typescript": "^3.3.3"
+  }
 }

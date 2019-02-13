@@ -1,17 +1,14 @@
 import React from 'react'
 
-import { Text, TextInput, Button, View } from 'react-native'
+import { Text, TextInput, View } from 'react-native'
 
-export class Card extends React.Component {
+interface IState {
+  sentenceOri?: string;
+  sentenceDest?: string;
+  category?: string;
+}
 
-    constructor(props) {
-        super(props)
-        this.state = {
-          sentenceOri: undefined,
-          sentenceDest: undefined,
-          category: undefined
-        }
-      }
+export class Card extends React.Component<{}, IState> {
 
     render() {
         let sentenceOriComponent;
